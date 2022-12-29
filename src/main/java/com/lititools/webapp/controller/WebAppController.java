@@ -12,13 +12,13 @@ public class WebAppController {
 		return "login/Login";
 	}
 	
-	@GetMapping
-	public String goHome(Model model) {
-		
-		return "home/home";
-	}
+//	@GetMapping
+//	public String goHome(Model model) {
+//		
+//		return "home/home";
+//	}
 	
-	@GetMapping("/test")
+	@GetMapping
 	public String testTemple(Model model) {
 		return "index";
 	}

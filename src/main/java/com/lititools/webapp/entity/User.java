@@ -41,10 +41,16 @@ public class User {
 	private Date createDate;
 
 	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinTable(name = "user_roles", joinColumns = {
+	@JoinTable(name = "users_roles", joinColumns = {
 			@JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = {
 					@JoinColumn(name = "role_id", nullable = false, updatable = false) })
-	@OrderBy("name")
 	private Set<Role> roles;
+	
+	
+	@ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinTable(name = "users_products", joinColumns = {
+			@JoinColumn(name = "user_id", nullable = false, updatable = false) }, inverseJoinColumns = {
+					@JoinColumn(name = "product_id", nullable = false, updatable = false) })
+	private Set<Product> products;
 
 }

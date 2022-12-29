@@ -9,7 +9,6 @@ public class ToolsController {
 	
 	@GetMapping("/tool-change-name")	
 	public String changeName(Model model) {
-		System.out.println("Vô /change-name ");
 		return "tools/change-name";
 	}
 }
